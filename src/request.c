@@ -3,10 +3,29 @@
 
 #define MAXBUF (8192)
 
-
-//
 //	TODO: add code to create and manage the buffer
-//
+
+#include <pthread.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+// Incoming HTTP Request Pending Structure
+typedef struct request {
+    int fd;                   
+    char filename[1024];        
+    // Time when the request was received
+    time_t arrival_time;        
+    // Ptr to next request
+    struct request* next;       
+} request_t;
+
+// Managin the buffer - w/global variables 
+request_t* request_head = NULL;    
+// Mutex to protect the request queue                     
+pthread_mutex_t buffer_lock = PTHREAD_MUTEX_INITIALIZER; 
+// Conditional var to signal
+pthread_cond_t buffer_not_empty = PTHREAD_COND_INITIALIZER; 
 
 //
 // Sends out HTTP response in case of errors
