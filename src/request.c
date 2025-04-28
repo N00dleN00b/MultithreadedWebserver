@@ -154,6 +154,29 @@ void request_serve_static(int fd, char *filename, int filesize) {
 void* thread_request_serve_static(void* arg)
 {
 	// TODO: write code to actualy respond to HTTP requests
+  while (1) {
+    // Fetch request from the buffer 
+    request_t* req = fetch_request();
+    // if buffer empty, wait
+    if (req != NULL) {
+        struct stat sbuf;
+        
+        // ensures requested file is still working/accessible
+        if (stat(req->filename, &sbuf) < 0) {
+            // If file not found, send 404 error
+            request_error(req->fd, req->filename, "404", "Not found", "server could not find this file");
+        } else {
+            // otherwise serve the static file to client
+            request_serve_static(req->fd, req->filename, sbuf.st_size);
+        }
+        
+        // close client connection
+        close_or_die(req->fd);  
+        free(req);              
+    }
+}
+return NULL;
+
 }
 
 //
