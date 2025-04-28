@@ -217,6 +217,36 @@ void request_handle(int fd) {
 		}
 		
 		// TODO: write code to add HTTP requests in the buffer based on the scheduling policy
+    // Add a new HTTP request into the buffer
+    void add_request(int fd, const char* filename) {
+      request_t* new_req = malloc(sizeof(request_t));
+      if (!new_req) {
+          perror("malloc");
+          exit(1);
+      }
+      new_req->fd = fd;
+      strncpy(new_req->filename, filename, sizeof(new_req->filename) - 1);
+      new_req->arrival_time = time(NULL);
+      new_req->next = NULL;
+
+      pthread_mutex_lock(&buffer_lock);
+
+      // Insert at the end of the linked list (FIFO insert)
+      // FIFO/SFF/Random applied later during fetch_request()
+      if (request_head == NULL) {
+          request_head = new_req;
+      } else {
+          request_t* curr = request_head;
+          while (curr->next != NULL) {
+              curr = curr->next;
+          }
+          curr->next = new_req;
+      }
+
+      // Wake up 
+      pthread_cond_signal(&buffer_not_empty); 
+      pthread_mutex_unlock(&buffer_lock);
+    }
 
     } else {
 		request_error(fd, filename, "501", "Not Implemented", "server does not serve dynamic content request");
