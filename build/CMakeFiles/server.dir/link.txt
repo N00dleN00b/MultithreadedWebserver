@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/server.dir/src/wserver.c.o CMakeFiles/server.dir/src/io_helper.c.o CMakeFiles/server.dir/src/request.c.o -o server 

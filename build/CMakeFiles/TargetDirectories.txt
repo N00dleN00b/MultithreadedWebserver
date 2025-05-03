@@ -1,0 +1,4 @@
+/mnt/c/Users/numar/Downloads/OS Concepts/Project3/OSProject3/build/CMakeFiles/server.dir
+/mnt/c/Users/numar/Downloads/OS Concepts/Project3/OSProject3/build/CMakeFiles/client.dir
+/mnt/c/Users/numar/Downloads/OS Concepts/Project3/OSProject3/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/numar/Downloads/OS Concepts/Project3/OSProject3/build/CMakeFiles/rebuild_cache.dir

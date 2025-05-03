@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/client.dir/src/wclient.c.o CMakeFiles/client.dir/src/io_helper.c.o CMakeFiles/client.dir/src/request.c.o -o client 
