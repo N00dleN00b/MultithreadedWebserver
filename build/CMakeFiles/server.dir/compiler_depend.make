@@ -316,14 +316,7 @@ CMakeFiles/server.dir/src/request.c.o: ../src/request.c \
   /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
-  ../src/request.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
-  /usr/include/limits.h \
-  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
-  /usr/include/linux/limits.h \
-  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h
+  ../src/request.h
 
 CMakeFiles/server.dir/src/wserver.c.o: ../src/wserver.c \
   /usr/include/stdc-predef.h \
@@ -487,18 +480,6 @@ CMakeFiles/server.dir/src/wserver.c.o: ../src/wserver.c \
 
 ../src/wserver.c:
 
-/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
-
-/usr/include/linux/limits.h:
-
-/usr/include/x86_64-linux-gnu/bits/local_lim.h:
-
-/usr/include/limits.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
-
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
@@ -540,8 +521,6 @@ CMakeFiles/server.dir/src/wserver.c.o: ../src/wserver.c \
 /usr/include/asm-generic/sockios.h:
 
 /usr/include/linux/posix_types.h:
-
-/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
 /usr/include/asm-generic/bitsperlong.h:
 

@@ -1,4 +1,4 @@
-CMakeFiles/server.dir/src/request.c.o: \
+CMakeFiles/client.dir/src/request.c.o: \
  /mnt/c/Users/numar/Downloads/OS\ Concepts/Project3/OSProject3/src/request.c \
  /usr/include/stdc-predef.h \
  /mnt/c/Users/numar/Downloads/OS\ Concepts/Project3/OSProject3/src/io_helper.h \
